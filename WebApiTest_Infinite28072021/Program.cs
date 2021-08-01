@@ -22,5 +22,11 @@ namespace WebApiTest_Infinite28072021
                 {
                     webBuilder.UseStartup<Startup>();
                 });
+
+        //webBuilder.UseStartup<Startup>().UseHttpSys(options =>
+        //            {
+        //    options.Authentication.Schemes = AuthenticationSchemes.NTLM | AuthenticationSchemes.Negotiate;
+        //    options.Authentication.AllowAnonymous = false;
+
     }
 }
