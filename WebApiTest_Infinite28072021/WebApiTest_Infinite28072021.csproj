@@ -24,9 +24,5 @@
     <PackageReference Include="Turner.Infrastructure.Crud.EntityFrameworkCore" Version="2.1.2" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="MyBaseMigration\" />
-  </ItemGroup>
-
 
 </Project>

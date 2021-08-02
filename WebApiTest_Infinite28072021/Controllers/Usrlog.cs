@@ -58,14 +58,14 @@ namespace WebApiTest_Infinite28072021.Controllers
             var dbparams = new DynamicParameters();
             dbparams.Add("@Name", nama, DbType.String);
             dbparams.Add("@Password", pass, DbType.String);
-            return await Task.FromResult( _dapper.Get<Parameters>("[dbo].[Api_sp_GetUser]", dbparams, commandType: CommandType.StoredProcedure));
+            return await Task.FromResult( _dapper.Get<Parameters>("[dbo].[Api_sp_GetUserLog]", dbparams, commandType: CommandType.StoredProcedure));
         }
 
 
         [HttpGet(nameof(GetAll))]
         public async Task<List<Parameters>> GetAll()
         {
-            var result = await Task.FromResult(_dapper.GetAll<Parameters>($"Select NAMA,PASSWORD,HAK_AKSES from [tm_login]", null, commandType: CommandType.Text));
+            var result = await Task.FromResult(_dapper.GetAll<Parameters>("Api_sp_GetUserAll", null, commandType: CommandType.StoredProcedure));
             return result;
         }
 
